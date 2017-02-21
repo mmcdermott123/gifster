@@ -1,0 +1,22 @@
+#index_wrapper
+  #category_wrapper
+    - if params[:tag].present? || params[:search].present?
+      - @link.each do |link|
+        .links.clearfix
+          .link_content.clearfix
+            .link_image
+              =link_to (image_tag link.image.url(:small)), link
+            .link_p
+              %p= link.title
+    - else
+      - @category.each do |category|
+        %p.category_title
+          = category.name
+        .links.clearfix
+          - @link.each do |link|
+            - if category.id == link.category_id
+              .link_content.clearfix
+                .link_image
+                  =link_to (image_tag link.image.url(:small)), link
+                .link_p
+                  %p= link.title

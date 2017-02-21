@@ -1,0 +1,13 @@
+= simple_form_for @link do |f|
+  = f.input :image, as: :file
+  %br/
+  = f.collection_select :category_id, Category.all, :id, :name, { promt: "Choose a Category" }
+  %br/
+  = f.input :title, placeholder: "Title"
+  %br/
+  =f.input :tag_list, placeholder: "Tags (start each tag with a '#')"
+  %br/
+  = f.input :content, placeholder: "Content"
+  %br/
+
+  = f.button :submit

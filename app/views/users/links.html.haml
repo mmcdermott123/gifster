@@ -1,0 +1,12 @@
+#user_profile_wrapper
+  %h3= @user.name
+  .user_profile_image
+    = image_tag @user.avatar(:thumb)
+  .user_profile_content
+    - @links.each do |link|
+      .links.clearfix
+        .link_content.clearfix
+          .link_image
+            =link_to (image_tag link.image.url(:small)), link
+          .link_p
+            %p= link.title

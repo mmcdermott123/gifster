@@ -1,0 +1,51 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#user_profile_wrapper {
+  width:80%;
+  margin:0 auto;
+  .user_profile_image {
+    display:flex;
+    justify-content:center;
+    border-bottom:1px solid grey;
+    padding-bottom:0.4em;
+    img {
+      border-radius:50%;
+      padding:4px 4px;
+    }
+  }
+  h3 {
+    margin-bottom:0px;
+    text-align:center;
+    padding-bottom:0px;
+    font-family:Lobster;
+  }
+  .user_profile_content {
+    margin-top:1em;
+    display:flex;
+    margin-left:none;
+  }
+}
+.follow-button {
+  text-transform: uppercase;
+  border-color: #4090db;
+  color: #4090db;
+  margin-left: 20px;
+  &:visited, &:focus, &:hover {
+    border-color: #2D6396;
+    color: #2D6396;
+  }
+}
+
+.unfollow-button {
+  text-transform: uppercase;
+  border-color: #66bd2b;
+  background-color: #66bd2b;
+  color: white;
+  margin-left: 20px;
+  &:visited, &:focus, &:hover {
+    border-color: #47821F;
+    background-color: #47821F;
+    color: white;
+  }
+}

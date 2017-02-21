@@ -1,0 +1,47 @@
+.edit_user_wrapper {
+  width:90%;
+  margin:0 auto;
+  h2 {
+    margin-top:4em;
+    text-align:center;
+    font-family:Oswald;
+  }
+  .form-inputs {
+    label {
+      display:none;
+    }
+    span.hint {
+      display:none;
+    }
+    input {
+      width:92%;
+      background:#ececec;
+      text-indent:0.4em;
+      margin-bottom:0.4em;
+      padding:0.6em 0em;
+      padding-right:2em;
+      padding-left:2em;
+      border:none;
+      border-radius:3px;
+    }
+  }
+  // Sign up | Log in | Edit_user | form button
+  .form-actions {
+    width:100%;
+    position:relative;
+    input {
+      position:absolute;
+      left:50%;
+      margin-left:-100px;
+      width:200px;
+      border:none;
+      background-color:white;
+      color:grey;
+      border-bottom:1px solid grey;
+    }
+  }
+  .edit_user_data {
+    margin-top:4em;
+    text-align:center;
+  }
+}

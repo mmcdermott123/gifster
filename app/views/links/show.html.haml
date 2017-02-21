@@ -1,0 +1,42 @@
+#show_wrapper.clearfix
+  .show_left_link
+    .user_button_container.clearfix
+      .user_buttons
+        = link_to like_link_path(@link), class: "show_button" do
+          .heart-animation
+            %i.fa.fa-heart-o
+        = link_to links_user_path(@link.user_id), class: "show_button" do
+          %i.fa.fa-user
+        = link_to download_link_path(@link.id), class: "show_button" do
+          %i.fa.fa-download
+        - if @link.user == current_user
+          = link_to edit_link_path, class: "show_button" do
+            %i.fa.fa-wrench
+          = link_to link_path(@link), method: :delete, data: {confirm: "Are you sure?"}, class: "show_button" do
+            %i.fa.fa-trash
+      = image_tag @link.image
+    .likes
+      %i.fa.fa-heart-o
+      = @link.get_upvotes.size
+  .show_tags_left
+    #tags
+      %h3= pluralize(@link.tags.count,"Tag")
+      = raw @link.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(' ')
+  #link_content_container
+    %h3= @link.title
+    %p.title_container
+      Posted by
+      = @link.user.name
+    %p= @link.content
+#comments_container
+  #comments
+    - @link.comments.each do |comment|
+      .comment
+        %p.comment_user_name=link_to comment.user.name, links_user_path(@link.user)
+        %p.comment_data= comment.content
+
+        - if comment.user == current_user
+          = link_to [comment.link, comment], method:  :delete do
+            .comment_delete
+              %i.fa.fa-times
+    = render 'comments/form'

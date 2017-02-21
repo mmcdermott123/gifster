@@ -1,0 +1,529 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ html,body {
+   background-color:white;
+   font-family:'Arial';
+ }
+
+ *:focus {
+   outline:none;
+ }
+
+ .clearfix:after {
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+ }
+
+ #notice_wrapper {
+  position: relative;
+  width: 100%;
+  background: rgba(0,0,0,0.2);
+  z-index: 999;
+  p {
+  padding: 2em 0;
+  text-align: center;
+  color: grey;
+  font-family: Oswald;
+  }
+ }
+
+
+#alert_wrapper {
+  position: relative;
+  width: 100%;
+  background: rgba(0,0,0,0.2);
+  z-index: 999;
+  p {
+  padding: 2em 0;
+  text-align: center;
+  color: grey;
+  font-family: Oswald;
+  }
+}
+header {
+  width:100%;
+  height:2.6em;
+  margin:0;
+  padding:0;
+  .header_wrapper {
+    width:90%;
+    margin:0 auto;
+    #logo {
+      position:relative;
+      font-family:'Lobster';
+      font-size:1.2em;
+      color:white;
+      float:left;
+      a {
+        text-decoration:none;
+        color:#7c7676;
+      }
+    }
+    #tag_cloud {
+      position: relative;
+      float: left;
+      margin-top:19px;
+      margin-left:4px;
+      width: 400px;
+      a {
+        text-decoration:none;
+        font-family:Raleway;
+        color:grey;
+
+        &:visited {
+          color:grey;
+        }
+        &:active {
+          color:grey;
+        }
+      }
+    }
+    #search_bar {
+      position: relative;
+      float: left;
+      margin-top:19px;
+      input#search {
+        border:none;
+        border-left:1px solid grey;
+        background-color:white;
+        text-indent:0.2em;
+      }
+      input[type="submit"] {
+        border:none;
+        background-color:white;
+      }
+    }
+    nav {
+      margin-top:1.2em;
+      float:right;
+      a {
+        font-family:"Raleway";
+        text-decoration:none;
+        margin-right:0.4em;
+        font-size:0.8m;
+        color:#7c7676;
+      }
+      img {
+        position: absolute;
+        right: 234px;
+        top: 10px;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+}
+// show page
+#show_wrapper {
+  width:90%;
+  margin: 0 auto;
+  margin-top:25px;
+  img {
+    width:400px;
+    height:400px;
+  }
+  .show_left_link {
+    float:left;
+    .likes {
+      position:relative;
+      right:-50px;
+      top:-25px;
+      color:white;
+    }
+    .user_button_container {
+      img {
+        float:right;
+        border-radius:3px;
+      }
+      .user_buttons {
+        float:left;
+        display:flex;
+        flex-direction:column;
+        .show_button {
+          position:relative;
+          top:30px;
+          padding-right:1em;
+          padding-bottom:1em;
+        }
+        a {
+          text-decoration:none;
+          color:black;
+          font-size:1.2em;
+        }
+      }
+    }
+  }
+}
+
+// Log in page
+#log_in_wrapper {
+  width:80%;
+  margin:0 auto;
+  .log_in_logo {
+    font-family:Oswald;
+  }
+  .log_in_left {
+    float:left;
+    position:relative;
+    img {
+      position:relative;
+      top:4em;
+      left:3em;
+      width:400px;
+      height:400px;
+      border-radius:3px;
+    }
+    h2 {
+      position:absolute;
+      right:1em;
+      bottom:3em;
+      font-size:4em;
+      font-family:Lobster;
+      color:black;
+    }
+  }
+  .log_in_right {
+    float:right;
+    position:relative;
+    top:7em;
+    right:14em;
+    padding:2em 0;
+    padding-left:4em;
+    border-left:1px solid black;
+    .log_in_logo {
+      opacity:0.4;
+    }
+    .form-inputs {
+      input {
+        width:100%;
+        background:#ececec;
+        text-indent:0.4em;
+        margin-bottom:0.4em;
+        padding:0.6em 0em;
+        padding-right:4em;
+        border:none;
+        border-radius:0 3px 3px 0;
+        border-left:1px solid grey;
+      }
+      label {
+        display:none;
+      }
+    }
+    .form-actions {
+      width:100%;
+      input {
+        width:129%;
+        border:none;
+        margin-top:0.4em;
+        font-family:arial;
+        background-color:#ececec;
+        color:grey;
+        font-family:Oswald;
+      }
+    }
+  }
+}
+
+// New link page
+.new_link_wrapper {
+  width:60%;
+  margin:0 auto;
+  h3 {
+    text-align:center;
+    font-family:Oswald;
+  }
+}
+
+// page labels
+label.string.required {
+  display:none;
+}
+label.string.optional {
+  display:none;
+}
+label.text.required {
+  display:none;
+}
+label.file.optional {
+  display:none;
+}
+// Input for Categories (added later in production)
+select#link_category_id {
+  width:101%;
+  margin-bottom:1em;
+  background-color:white;
+  border:none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-left:1px solid grey;
+  border-right:1px solid grey;
+  padding-bottom:0.5em;
+  border-radius:1px;
+  text-indent:3px;
+  font-size:20px;
+  padding-top:0.5em;
+  padding-right:5px;
+}
+// Input for link title (added later in production)
+input#link_title {
+  width:100%;
+  border:none;
+  border-left:1px solid grey;
+  border-right:1px solid grey;
+  padding-bottom:0.5em;
+  border-radius:1px;
+  text-indent:3px;
+  font-size:20px;
+  padding-top:0.5em;
+  padding-right:5px;
+}
+//New page Tag input style (This was added later in production)
+input#link_tag_list {
+  width:100%;
+  border:none;
+  border-left:1px solid grey;
+  border-right:1px solid grey;
+  padding-bottom:0.5em;
+  border-radius:1px;
+  text-indent:3px;
+  font-size:20px;
+  padding-top:0.5em;
+  padding-right:5px;
+}
+
+// New page Link content input
+textarea#link_content {
+  width:100%;
+  padding-bottom:10em;
+  border:none;
+  border-left:2px solid grey;
+  border-right:2px solid grey;
+  text-indent:3px;
+  font-size:20px;
+  padding-top:4px;
+}
+// Show page Comment content input
+input#comment_content {
+  float:left;
+  width:100%;
+  border:none;
+  border-left:1px solid grey;
+  text-indent:2px;
+}
+i.fa.fa-times {
+  float:right;
+  position:relative;
+  top:-33px;
+  left:65px;
+}
+// Edit page
+#edit_gif_wrapper {
+  width:90%;
+  margin:0 auto;
+  h3 {
+    font-family:Oswald;
+  }
+}
+// show page | added tag Style
+.show_tags_left {
+  #tags {
+    float:left;
+    display:flex;
+    flex-direction:column;
+    h3 {
+      font-family:Oswald;
+      padding-bottom:0.2em;
+      margin-left:1em;
+    }
+    a {
+      margin-left:1em;
+      text-indent:0.2em;
+      text-decoration:none;
+      color:grey;
+      margin-top:0.2em;
+      border-left:1px solid blue;
+    }
+  }
+}
+// Show page | comments container
+#comments_container {
+  width:90%;
+  margin:0 auto;
+  #comments {
+    width:400px;
+    height:400px;
+    margin-left:40px;
+    .comment {
+      p.comment_user_name {
+        display:inline-block;
+        font-size:0.8em;
+        margin-right:0.2em;
+        a {
+          text-decoration:none;
+          color:#1cb6ff;
+        }
+      }
+      p.comment_data {
+        display:inline-block;
+        font-size:0.8em;
+        color:grey;
+      }
+      .comment_delete {
+        display:inline-block;
+        position:relative;
+        top:38px;
+        right:50px;
+        i.fa.fa-times {
+          text-decoration:none;
+          color:grey;
+        }
+      }
+    }
+  }
+}
+// Sign up page Wrapper and style
+#new_user_wrapper {
+  width:90%;
+  margin:0 auto;
+  h2 {
+    margin-top:4em;
+    margin-left:40px;
+    text-align:center;
+    font-family:Oswald;
+  }
+  .form-inputs {
+    width:250px;
+    margin:0 auto;
+    label {
+      display:none;
+    }
+    input {
+      width:100%;
+      background:#ececec;
+      text-indent:0.4em;
+      margin-bottom:0.4em;
+      padding:0.6em 0em;
+      padding-right:4em;
+      border:none;
+      border-radius:3px;
+    }
+  }
+  // Sign up | Log in | form button
+  .form-actions {
+    width:160px;
+    margin:0 auto;
+    input {
+      margin-top:0.4em;
+      border:none;
+      background-color:white;
+      width:145%;
+      color:grey;
+      border-bottom:1px solid grey;
+    }
+  }
+}
+// heart animation
+.heart-animation {
+  i.fa.fa-heart-o {
+    color:red;
+  }
+}
+// show page title && content
+#link_content_container {
+  display:inline-block;
+  position:relative;
+  width:52%;
+  h3 {
+    text-align:center;
+    font-family:Lobster;
+    margin-left:51.8px;
+    margin-top:0px;
+    margin-bottom: 0px;
+  }
+  p.title_container {
+    text-align: center;
+    border-bottom: 1px solid grey;
+    margin-top: 0px;
+    padding-top:0.2em;
+    padding-bottom:0.6em;
+  }
+  p {
+    text-align:center;
+    font-family:Raleway;
+    margin-left:51.8px;
+
+  }
+}
+// Application page || drop down bar
+
+.drop_down_menu {
+  z-index:3;
+  display:none;
+  flex-direction:column;
+  position:absolute;
+  background:grey;
+  width: 240px;
+  height: 200px;
+  top: 48px;
+  right: 11px;
+  border-radius:3px;
+  transition: opacity 800ms ease-in-ease-out;
+  #dropdown_content {
+    img {
+    position:relative;
+    left:70px;
+    width:100px;
+    height:100px;
+    top:15px;
+    }
+  }
+}
+
+a#dropdown_sign_out {
+  position:relative;
+  left:85px;
+  top:36px;
+  color:white;
+}
+#dropdown_settings {
+  color:white;
+  position:relative;
+  left: 70px;
+  top: 30px;
+}
+
+#drop_down_name {
+  font-family:"Lobster";
+  position:relative;
+  left:55px;
+  top:20px;
+  color:white;
+  margin:0px;
+}
+
+i.fa.fa-angle-down {
+  color:grey;
+  cursor:pointer;
+}
+
+footer {
+  height:200px;
+}
